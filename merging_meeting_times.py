@@ -15,6 +15,7 @@ def merge_ranges(mtg_time_ranges):
     
     """
 
+
     if len(mtg_time_ranges) <= 1:
         return mtg_time_ranges
 
@@ -45,6 +46,8 @@ def merge_ranges(mtg_time_ranges):
     merged.append((start, end))
 
     return merged
+
+    
         
 if __name__ == "__main__":
     from doctest import testmod
