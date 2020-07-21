@@ -12,9 +12,13 @@ def missing_number(nums, max_num):
     
     """
 
-    for num in range(1, max_num):
-        if num not in nums:
-            return num
+    nums.sort()
+
+    count = 1
+    for num in nums:
+        if count !=num:
+            return count
+        count += 1
 
 
 if __name__ == '__main__':
