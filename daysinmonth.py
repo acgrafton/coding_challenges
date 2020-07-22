@@ -74,9 +74,6 @@ def days_in_month(date):
     return days
 
 
-
-
-
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
