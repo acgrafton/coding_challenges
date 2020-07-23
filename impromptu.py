@@ -14,16 +14,16 @@ def digitSumsDifference(n):
         else:
             odd_sum += digit
         num_digits -= 1
-        
+
     return even_sum - odd_sum
 
 def alarmClock(setTime, timeToSet):
-
+    
     setTimeHr, setTimeMin = map(int, setTime.split(':'))
     timeToSetHr, timeToSetMin = map(int, timeToSet.split(':'))
 
     higherHr = max(setTimeHr, timeToSetHr)
-    lowerHr = min(setTimeHr, timeToSetHr)
+    lowerHr = setTimeHr if higherHr == timeToSetHr else timeToSetHr
     higherMin = max(setTimeMin, timeToSetMin)
     lowerMin = min(setTimeMin, timeToSetMin)
 
@@ -32,9 +32,25 @@ def alarmClock(setTime, timeToSet):
 
     return chgHr + chgMin
 
+# print(alarmClock('07:30', '08:00'))
+# print(alarmClock('23:45', '08:15'))
+# print(alarmClock('21:15', '09:25'))
+# print(alarmClock('00:00', '00:00'))
+# print(alarmClock('08:00', '21:00'))
 
-print(alarmClock('07:30', '08:00'))
-print(alarmClock('23:45', '08:15'))
-print(alarmClock('21:15', '09:25'))
-print(alarmClock('00:00', '00:00'))
-print(alarmClock('08:00', '21:00'))
+def getNumberDigits(number):
+    
+    if number == 0:
+        return 1
+    
+    count = 0
+    number = abs(number)
+    while number > 0:
+        count += 1
+        number -= (number % 10**(count))
+        
+    return count
+
+print(getNumberDigits(123456789))
+print(getNumberDigits(0))
+    
