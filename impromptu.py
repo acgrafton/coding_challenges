@@ -53,4 +53,6 @@ def getNumberDigits(number):
 
 print(getNumberDigits(123456789))
 print(getNumberDigits(0))
+
+
     

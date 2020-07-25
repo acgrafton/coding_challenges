@@ -34,8 +34,6 @@ def hex_convert(hex_in):
     return decimal
 
 
-
-
 if __name__ == "__main__":
     import doctest
     if doctest.testmod().failed == 0:
