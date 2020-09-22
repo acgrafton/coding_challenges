@@ -21,29 +21,23 @@ delete_node(b)
 
 import unittest
 
-
 def delete_node(node_to_delete):
 
-    # Delete the input node from the linked list
-    
+    curr = node_to_delete
 
-    pass
+    while curr.next.next:
+        curr.value = curr.next.value
+        curr = curr.next
+    curr.value = curr.next.value
+    curr.next = None
 
-
-
-
-
-
-
-
-
-
+"""
+Complexity:
+O(n) - Worst case, the node to delete is at the beginning of linked list.
+O(1) - No additional structures used. Just variable Node curr.
 
 
-
-
-
-
+"""
 
 
 # Tests
