@@ -36,6 +36,12 @@ def has_palindrome_permutation(the_string):
                 return False
     return True
 
+"""
+Complexity:
+O(n) Time - Looping through entire string to count characters.
+O(1) Space - Finite number of characters 
+"""
+
 
 # Tests
 
