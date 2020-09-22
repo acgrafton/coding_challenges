@@ -24,17 +24,15 @@ from collections import Counter
 
 def has_palindrome_permutation(the_string):
 
-    letter_count = Counter(the_string)
-    count_count = Counter(letter_count.values())
+    unpaired = set()
 
-    odd_count = False
-    for count in count_count:
-        if count % 2 != 0:
-            if not odd_count and count_count[count] == 1:
-                odd_count = True
-            else:
-                return False
-    return True
+    for char in the_string:
+        if char in unpaired:
+            unpaired.remove(char)
+        else:
+            unpaired.add(char)
+    
+    return len(unpaired)
 
 """
 Complexity:
